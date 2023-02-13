@@ -578,7 +578,7 @@ class _HomePageState extends State<HomePage> {
             ),
 
             //  const Icon(Icons.grid_view),
-            // const Icon(Icons.search_outlined),
+            const Icon(Icons.search_outlined),
             const Icon(Icons.person_outline),
             const Icon(Icons.shopping_cart_outlined),
           ]),
