@@ -1,9 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:furniture_demo/chair_page.dart';
-import 'package:furniture_demo/clock_page.dart';
 import 'package:furniture_demo/search_bar.dart';
-import 'package:furniture_demo/second_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,7 +14,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    return Scaffold(backgroundColor: Colors.amber,
+    return Scaffold(backgroundColor: Colors.white54,
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -160,7 +158,7 @@ class _HomePageState extends State<HomePage> {
                           },
                           child: const Text(
                             'Chair',
-                            style: TextStyle(fontSize: 20),
+                            style: TextStyle(fontSize: 20,color: Colors.black),
                           )),
                     ),
                     Padding(
@@ -170,22 +168,18 @@ class _HomePageState extends State<HomePage> {
                           onPressed: () {},
                           child: const Text(
                             'Lamp',
-                            style: TextStyle(fontSize: 20),
+                            style: TextStyle(fontSize: 20,color: Colors.black),
                           )),
                     ),
                     Padding(
                       padding:
-                          const EdgeInsets.only(left: 4, right: 4),
+                      const EdgeInsets.only(left: 4, right: 4),
                       child: TextButton(
                           onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Clock(),
-                                ));
+                            //   Navigator.push(context,  MaterialPageRoute(builder: (context) => Clock(),));
                           },
                           child: const Text('Clock',
-                              style: TextStyle(fontSize: 20))),
+                              style: TextStyle(fontSize: 20,color: Colors.black))),
                     ),
                     Padding(
                       padding:
@@ -195,7 +189,7 @@ class _HomePageState extends State<HomePage> {
                             //   Navigator.push(context,  MaterialPageRoute(builder: (context) => Clock(),));
                           },
                           child: const Text('Claak',
-                              style: TextStyle(fontSize: 20))),
+                              style: TextStyle(fontSize: 20,color: Colors.black))),
                     ),
                     Padding(
                       padding:
@@ -203,28 +197,9 @@ class _HomePageState extends State<HomePage> {
                       child: TextButton(
                           onPressed: () {},
                           child: const Text('Claak',
-                              style: TextStyle(fontSize: 20))),
+                              style: TextStyle(fontSize: 20,color: Colors.black))),
                     ),
-                    Padding(
-                      padding:
-                          const EdgeInsets.only(left: 4, right: 4),
-                      child: TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            'Chair',
-                            style: TextStyle(fontSize: 20),
-                          )),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsets.only(left: 4, right: 4),
-                      child: TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            'Lamp',
-                            style: TextStyle(fontSize: 20),
-                          )),
-                    ),
+
                   ],
                 ),
               ),
@@ -238,15 +213,13 @@ class _HomePageState extends State<HomePage> {
                     Padding(
                       padding: const EdgeInsets.only(left: 10),
                       child: TextButton(
-                        onPressed: () {
-                          // Navigator.push(context,  MaterialPageRoute(builder: (context) => SecondPage(),));
-                        },
+                        onPressed: () {},
                         child: Container(
                           width: 200,
                           height: 250,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
-                            color: Colors.grey[200],
+                            color: Colors.white,
                           ),
                           child: Container(
                             child: Padding(
@@ -254,57 +227,56 @@ class _HomePageState extends State<HomePage> {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  const Padding(
-                                    padding: EdgeInsets.all(8.0),
+                                  Container(
+                                    child: const Padding(
+                                      padding: EdgeInsets.all(8.0),
+                                    ),
                                   ),
-                                  Column(
-                                    children: [
-                                      Image.asset('assets/images/image7.png',
-                                          height: 130),
-                                      Padding(
-                                        padding: const EdgeInsets.only(
-                                            top: 18,
-                                            left: 2,
-                                            right: 4,
-                                            bottom: 2),
-                                        child: Container(
-                                          child: Padding(
-                                            padding: const EdgeInsets.only(
-                                                bottom: 2,
+                                  Container(
+                                    child: Column(
+                                      children: [
+                                        Container(
+                                          child: Image.asset(
+                                              'assets/images/image7.png',
+                                              height: 130),
+                                        ),
+                                        Column(
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
                                                 right: 5,
-                                                left: 5,
-                                                top: 2),
-                                            child: Text(
-                                              'Velure Prouf ',
-                                              textAlign: TextAlign.center,
-                                              style: TextStyle(
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.bold,
+                                                bottom: 5,
+                                              ),
+                                              child: Column(
+                                                children: [
+                                                  Container(
+                                                    child: const Text(
+                                                      'Golden Prouf ',
+                                                      style: TextStyle(
+                                                          fontSize: 20,
+                                                          fontWeight:
+                                                          FontWeight.bold),
+                                                    ),
+                                                  )
+                                                ],
                                               ),
                                             ),
-                                          ),
-                                        ),
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.only(
-                                                bottom: 2,
-                                                right: 5,
-                                                left: 21,
-                                                top: 2),
-                                            child: const Text(
-                                              '\$ 200',
-                                              style: TextStyle(
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.w100),
+                                            Row(
+                                              mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                              children: [
+                                                const Text(
+                                                  '\$ 1200',
+                                                  style: TextStyle(
+                                                      fontWeight:
+                                                      FontWeight.w500),
+                                                ),
+                                              ],
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                          ],
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ],
                               ),
@@ -341,7 +313,7 @@ class _HomePageState extends State<HomePage> {
                                         Container(
                                           child: Image.asset(
                                               'assets/images/image11.png',
-                                              height: 100),
+                                              height: 130),
                                         ),
                                         Column(
                                           children: [
@@ -416,7 +388,7 @@ class _HomePageState extends State<HomePage> {
                                         Container(
                                           child: Image.asset(
                                               'assets/images/image12.png',
-                                              height: 100),
+                                              height: 130),
                                         ),
                                         Column(
                                           children: [
@@ -433,7 +405,7 @@ class _HomePageState extends State<HomePage> {
                                                       style: TextStyle(
                                                           fontSize: 20,
                                                           fontWeight:
-                                                              FontWeight.bold),
+                                                              FontWeight.w500),
                                                     ),
                                                   )
                                                 ],
@@ -443,14 +415,12 @@ class _HomePageState extends State<HomePage> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
-                                                Container(
-                                                    child: const Icon(
-                                                        Icons.monetization_on)),
+
                                                 const Text(
-                                                  '200',
+                                                  '\$ 200',
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w100),
+                                                          FontWeight.bold),
                                                 ),
                                               ],
                                             ),
@@ -494,7 +464,7 @@ class _HomePageState extends State<HomePage> {
                                         Container(
                                           child: Image.asset(
                                               'assets/images/image8.png',
-                                              height: 100),
+                                              height: 130),
                                         ),
                                         Column(
                                           children: [
@@ -506,12 +476,14 @@ class _HomePageState extends State<HomePage> {
                                               child: Column(
                                                 children: [
                                                   Container(
-                                                    child: const Text(
-                                                      'Velure Prouf ',
-                                                      style: TextStyle(
-                                                          fontSize: 20,
-                                                          fontWeight:
-                                                              FontWeight.bold),
+                                                    child: Center(
+                                                      child: const Text(
+                                                        'Halmar Chair ',
+                                                        style: TextStyle(
+                                                            fontSize: 20,
+                                                            fontWeight:
+                                                                FontWeight.bold),
+                                                      ),
                                                     ),
                                                   )
                                                 ],
@@ -521,14 +493,11 @@ class _HomePageState extends State<HomePage> {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
-                                                Container(
-                                                    child: const Icon(
-                                                        Icons.monetization_on)),
                                                 const Text(
-                                                  '200',
+                                                  '\$ 250',
                                                   style: TextStyle(
                                                       fontWeight:
-                                                          FontWeight.w100),
+                                                          FontWeight.w500),
                                                 ),
                                               ],
                                             ),
@@ -578,7 +547,7 @@ class _HomePageState extends State<HomePage> {
             ),
 
             //  const Icon(Icons.grid_view),
-            const Icon(Icons.search_outlined),
+            // const Icon(Icons.search_outlined),
             const Icon(Icons.person_outline),
             const Icon(Icons.shopping_cart_outlined),
           ]),

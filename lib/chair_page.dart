@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:furniture_demo/chair.dart';
 import 'package:furniture_demo/home_page.dart';
 
 class ChairPage extends StatelessWidget {
@@ -11,15 +12,50 @@ class ChairPage extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
+          Padding(
+            padding: const EdgeInsets.only(top: 30,left: 10,right: 10),
+            child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                    child: Padding(
+                      padding: const EdgeInsets.all(1),
+                      child: TextButton( onPressed: () {Navigator.push(context,  MaterialPageRoute(builder: (context) => HomePage(),));},
+                        child: Icon(
+                          Icons.arrow_back_ios_sharp,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ),decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.white)
+                ),
+                Container(child: Icon(Icons.shopping_cart_outlined,color: Colors.black),),
+              ],
+            ),
+          ),
           Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/images/image12.png',
-                    height: 250, width: 250),
+                Row(
+                  children: [
+                    Container(
+                      child: Image.asset('assets/images/image12.png',
+                          height: 250, width: 250),
+                    ),
+                  ],
+                ),
+
               ],
             ),
           ),
+           Padding(
+             padding: const EdgeInsets.all(8.0),
+             child: Row(mainAxisAlignment: MainAxisAlignment.center,
+               children: [Container(child: Icon(Icons.circle_outlined,size: 10),),
+               Container(child: Icon(Icons.circle,size: 10),),
+               Container(child: Icon(Icons.circle_outlined,size: 10),),
+               Container(child: Icon(Icons.circle_outlined,size: 10),),],),
+           ),
+
           Row(
             children: [
               Container(
@@ -86,9 +122,8 @@ class ChairPage extends StatelessWidget {
                         Container(
                           padding: EdgeInsets.all(2),
                           decoration: BoxDecoration(
-                            border: Border.all(),
-                            borderRadius: BorderRadius.circular(50)
-                          ),
+                              border: Border.all(),
+                              borderRadius: BorderRadius.circular(50)),
                           child:
                               Icon(Icons.circle, color: Colors.green, size: 33),
                         ),
@@ -106,8 +141,25 @@ class ChairPage extends StatelessWidget {
                             right: 20,
                             left: 28,
                           ),
-                          child: Text('Quantity'),
+                          child: Padding(
+                            padding: const EdgeInsets.only(bottom: 20,top: 5),
+                            child: Text('Quantity',style: TextStyle(fontSize: 20)),
+                          ),
                         ),
+                      ],
+                    ),
+                    Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 30,top: 10,bottom: 20),
+                              child: Text('-   1   +',style: TextStyle(fontSize: 20),)
+                            ),
+                        ),
+                        Container(child: Padding(
+                          padding: const EdgeInsets.only(right: 25),
+                          child: Text('\$ 299',style: TextStyle(fontSize: 20),),
+                        )),
                       ],
                     ),
                     Padding(
@@ -123,7 +175,13 @@ class ChairPage extends StatelessWidget {
                               padding:
                                   const EdgeInsets.only(left: 30, right: 30),
                               child: TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Chair3(),
+                                      ));
+                                },
                                 child: Text('VR View',
                                     style: TextStyle(color: Colors.green)),
                               ),
